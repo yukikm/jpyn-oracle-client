@@ -6,6 +6,7 @@ import axios from "axios";
 import log4js from "log4js";
 
 dotenv.config();
+
 const logger = log4js.getLogger();
 logger.level = "all";
 log4js.configure({
@@ -44,8 +45,8 @@ db.serialize(() => {
   );
 });
 
-const privateKey = process.env.PRIVATE_KEY;
-const contractAddress = process.env.ORACLE_CONTRACT_ADDRESS;
+const privateKey: any = process.env.PRIVATE_KEY;
+const contractAddress: any = process.env.ORACLE_CONTRACT_ADDRESS;
 
 const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL);
 const wallet = new ethers.Wallet(privateKey, provider);
@@ -102,7 +103,7 @@ async function getBankAccount(hashedAccount: string) {
     `${process.env.API_URL}/api/bank?hashedAccount=${hashedAccount}`
   );
   const data = await res.json();
-  return data.res;
+  return data.res[0];
 }
 
 async function updateRequestId(requestId: number) {

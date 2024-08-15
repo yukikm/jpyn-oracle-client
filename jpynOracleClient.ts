@@ -168,10 +168,12 @@ async function main() {
           );
         } catch (error) {
           await updateRequest(Number(requestId), 2, 0);
+          updateRequestId(Number(currentRequestId) + 1);
           logger.error("Error: ", error);
         }
       } else {
         await updateRequest(Number(requestId), 2, 0);
+        updateRequestId(Number(currentRequestId) + 1);
         logger.info("Bank account not found");
       }
       updateRequestId(Number(currentRequestId) + 1);

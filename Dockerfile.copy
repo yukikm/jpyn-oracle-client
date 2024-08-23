@@ -9,7 +9,7 @@ RUN npm install
 COPY . .
 
 ENV PRIVATE_KEY=xxxxxxxxxxxxxxx
-ENV ORACLE_CONTRACT_ADDRESS="0xF577b7Bb86a4c73bd6C112f3f2dB39370446c7fB"
+ENV ORACLE_CONTRACT_ADDRESS="0x05871A5462C394BF84c9CFBa8E746b4039AEfD25"
 ENV PROVIDER_URL="https://rpc-1.testnet.japanopenchain.org:8545"
 ENV MUFG_API="https://developer.api.bk.mufg.jp/btmu/corporation/trial/v1/accounts"
 ENV MUFG_API_KEY=xxxxxxxxxxxxxxx

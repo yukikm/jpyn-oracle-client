@@ -161,11 +161,7 @@ async function main() {
           const request = await requestMufgAPI(
             `${bankAccount.branchNo}${bankAccount.accountTypeCode}${bankAccount.accountNo}`
           );
-          await updateRequest(
-            Number(requestId),
-            1,
-            request.data.clearedBalance
-          );
+          await updateRequest(Number(requestId), 1, request.data.todayBalance);
         } catch (error) {
           await updateRequest(Number(requestId), 2, 0);
           updateRequestId(Number(currentRequestId) + 1);
